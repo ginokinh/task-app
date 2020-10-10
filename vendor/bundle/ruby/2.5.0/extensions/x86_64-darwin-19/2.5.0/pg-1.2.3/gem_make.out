@@ -1,5 +1,5 @@
 current directory: /Users/hirokichi/workspace/task-app/vendor/bundle/ruby/2.5.0/gems/pg-1.2.3/ext
-/Users/hirokichi/.rbenv/versions/2.5.1/bin/ruby -I /Users/hirokichi/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201008-57562-6e4yp1.rb extconf.rb
+/Users/hirokichi/.rbenv/versions/2.5.1/bin/ruby -I /Users/hirokichi/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201008-72509-1az8iih.rb extconf.rb
 checking for pg_config... yes
 Using config values from /usr/local/bin/pg_config
 checking for libpq-fe.h... yes
@@ -150,4 +150,4 @@ linking shared-object pg_ext.bundle
 
 current directory: /Users/hirokichi/workspace/task-app/vendor/bundle/ruby/2.5.0/gems/pg-1.2.3/ext
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 pg_ext.bundle ./.gem.20201008-57562-1q15gw3
+/usr/bin/install -c -m 0755 pg_ext.bundle ./.gem.20201008-72509-vn9qn5
