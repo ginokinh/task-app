@@ -5,7 +5,13 @@
     .form-group
       = f.label :name
       = f.text_field :name, class: 'form-control', id: 'task_name'
+      - if @task.errors.include?(:name)
+        p style="color: red;"
+          = @task.errors.full_messages_for(:name).first
     .form-group
       = f.label :description
       = f.text_area :description, class: 'form-control', id: 'task_description'
+      - if @task.errors.include?(:description)
+        p style="color: red;"
+          = @task.errors.full_messages_for(:description).first
     = f.submit class: 'btn btn-primary'
