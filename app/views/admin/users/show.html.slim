@@ -1,0 +1,32 @@
+.main.px-5
+  h1 ユーザーの詳細
+
+  .nav.justify-content-end
+    = link_to '一覧', admin_users_path, class: 'btn btn-info'
+
+  table.table.my-3
+    tbody
+      tr
+        th= User.human_attribute_name(:id)
+        td= @user.id
+      tr
+        th= User.human_attribute_name(:name)
+        td= @user.name
+      tr
+        th= User.human_attribute_name(:email)
+        td= @user.email
+      tr
+        th= User.human_attribute_name(:admin)
+        td= @user.admin
+      tr
+        th= User.human_attribute_name(:password)
+        td= @user.password
+      tr
+        th= User.human_attribute_name(:created_at)
+        td= @user.created_at
+      tr
+        th= User.human_attribute_name(:updated_at)
+        td= @user.updated_at
+  
+  = link_to '編集する', edit_task_path, class: 'btn btn-primary mr-3'
+  = link_to '削除する', [:admin, @user], method: :delete, data: { confirm: "ユーザー「#{@user.name}」を削除します。よろしいですか？"},class: 'btn btn-danger'

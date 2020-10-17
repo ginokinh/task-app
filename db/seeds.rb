@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+5.times do |i|
+  if i.even?
+    User.create(name: "user#{i}", email: "user#{i}@example.com", admin: true, password: 'test', password_confirmation: 'test')
+  else
+    User.create(name: "user#{i}", email: "user#{i}@example.com", admin: false, password: 'test', password_confirmation: 'test')
+  end
+end
