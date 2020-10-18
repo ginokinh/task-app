@@ -30,6 +30,7 @@ gem 'slim-rails'
 gem 'html2slim'
 gem 'bootstrap'
 gem 'seed-fu', '~> 2.3'
+gem 'rails_autolink'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'pry-byebug', group: :development

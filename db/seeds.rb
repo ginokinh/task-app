@@ -1,14 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 5.times do |i|
   if i.even?
-    User.create(name: "user#{i}", email: "user#{i}@example.com", admin: true, password: 'test', password_confirmation: 'test')
+    user = User.create(name: "user#{i}", email: "user#{i}@example.com", admin: true, password: 'test', password_confirmation: 'test')
+    Task.create(name: "#{user.name}さんの朝", description: "管理人#{user.name}が起床する", user_id: user.id)
+    Task.create(name: "#{user.name}さんの昼", description: "管理人#{user.name}は外出する", user_id: user.id)
+    Task.create(name: "#{user.name}さんの夜", description: "管理人#{user.name}は家で休む", user_id: user.id)
   else
-    User.create(name: "user#{i}", email: "user#{i}@example.com", admin: false, password: 'test', password_confirmation: 'test')
+    user = User.create(name: "user#{i}", email: "user#{i}@example.com", admin: false, password: 'test', password_confirmation: 'test')
+    Task.create(name: "#{user.name}さんの朝", description: "#{user.name}が起床する", user_id: user.id)
+    Task.create(name: "#{user.name}さんの昼", description: "#{user.name}は外出する", user_id: user.id)
+    Task.create(name: "#{user.name}さんの夜", description: "#{user.name}は家で休む", user_id: user.id)
   end
 end
+
