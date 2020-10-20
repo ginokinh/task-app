@@ -1,4 +1,18 @@
-.main.px-5
-  h1 タスクの新規登録
+h1 タスクの新規登録
+.nav.justify-content-end
+  = link_to '一覧', tasks_path, class: 'btn btn-info'
 
-  = render partial: 'form', locals: { task: @task }
+= form_with model: @task, local: true, url: confirm_new_task_path do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control', id: 'task_name'
+    - if @task.errors.include?(:name)
+      p#error_explanation style="color: red;"
+        = @task.errors.full_messages_for(:name).first
+  .form-group
+    = f.label :description
+    = f.text_area :description, class: 'form-control', id: 'task_description'
+    - if @task.errors.include?(:description)
+      p#error_explanation style="color: red;"
+        = @task.errors.full_messages_for(:description).first
+  = f.submit '確認', class: 'btn btn-primary'
